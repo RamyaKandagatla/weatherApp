@@ -1,0 +1,14 @@
+in windows : to get emojies use - "windows logo + ."
+
+* search for the open weather api in google
+* login
+* under ur name , go to my profile
+* API Keys
+* create Key - give name - then click on the Generate , that key will be activated within 15-20 mins.
+* go to API in the nav bar, use any of the API, click on the API doc, use the api  (check if it is working ex:
+ https://api.openweathermap.org/data/2.5/weather?lat=33.44&lon=-94.04&appid=4c2750047bc3a54e56066088984af5e6
+ https://api.openweathermap.org/data/2.5/weather?q=India&appid=4c2750047bc3a54e56066088984af5e6)
+*  for forecast api,go to the pricing in the navBar scroll down, check for free, in free click on the 3-hour Forecast 5 days (https://api.openweathermap.org/data/2.5/forecast?lat=20.5937&lon=78.9629&appid=4c2750047bc3a54e56066088984af5e6)
+
+* luxon - makes working with date n time zone very easily
+* epoch time converter 
