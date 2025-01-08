@@ -12,3 +12,15 @@ in windows : to get emojies use - "windows logo + ."
 
 * luxon - makes working with date n time zone very easily
 * epoch time converter 
+
+*  npm install vite-plugin-compression --save-dev (to compress the code)
+* to disable source code in the inspect
+    build: {
+        sourcemap: false,
+    },
+    add in vite.config.js
+
+
+* sm for small screens (min-width: 640px).
+* md for medium screens (min-width: 768px).
+* lg for large screens (min-width: 1024px).

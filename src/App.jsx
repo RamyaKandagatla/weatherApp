@@ -39,7 +39,7 @@ const App = () => {
 
   return (
     <div
-      className={`mx-auto max-w-screen-lg mt-4 py-5 px-32 bg-gradient-to-br
+      className={`mx-auto max-w-screen-lg mt-4 py-5 px-4 sm:px-8 md:px-16 lg:px-32 bg-gradient-to-br
       shadow-xl shadow-gray-400 ${formatBackground()}`}
     >
       <TopButtons setQuery={setQuery} />
@@ -54,7 +54,13 @@ const App = () => {
         </>
       )}
 
-      <ToastContainer autoClose={2500} hideProgressBar={true} theme="colored" />
+      <ToastContainer
+        autoClose={2500}
+        hideProgressBar={true}
+        theme="colored"
+        position="top-right"
+        className="absolute top-0 right-0 m-4 w-1/3 z-50"
+      />
     </div>
   );
 };

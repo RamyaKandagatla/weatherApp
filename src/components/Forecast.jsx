@@ -2,20 +2,20 @@
 
 const Forecast = ({ title, data }) => {
   return (
-    <div>
+    <div >
       <div className="flex items-center justify-start mt-6">
-        <p className="font-medium uppercase">{title}</p>
+        <p className="font-medium uppercase text-sm sm:text-base md:text-sm">{title}</p>
       </div>
       <hr className="my-1" />
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap">
         {data.map((item, index) => (
           <div
             key={index}
             className="flex flex-col items-center justify-center"
           >
-            <p className="font-light text-sm">{item.title}</p>
-            <img src={item.icon} alt="weather icon" className="w-12 my-1" />
-            <p className="font-medium">{item.temp.toFixed()}º</p>
+            <p className="font-light text-xs sm:text-sm md:text-md lg:text-xl">{item.title}</p>
+            <img src={item.icon} alt="weather icon" className="w-8 sm:w-12 my-1" />
+            <p className="font-medium text-xs sm:text-sm md:text-md lg:text-xl">{item.temp.toFixed()}º</p>
           </div>
         ))}
       </div>

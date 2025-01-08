@@ -20,15 +20,18 @@ const Inputs = ({ setQuery, setUnits }) => {
   };
 
   return (
-    <div className="flex flex-row justify-center my-6">
-      <div className=" flex flex-row w-3/4 items-center justify-center space-x-4">
+    <div className="flex flex-row justify-center my-6 items-center">
+      <div className="flex flex-row items-center justify-center sm:space-x-2 md:space-x-4 lg:space-x-6
+        w-full sm:w-3/4 md:w-2/3 lg:w-1/2">
         <input
           value={city}
           onChange={(e) => setCity(e.currentTarget.value)}
           type="text"
           placeholder="search by city..."
-          className="text-gray-500 text-xl font-light p-2 w-full
-            shadow-xl capitalize focus:outline-none placeholder:lowercase"
+          className="text-gray-500 text-base sm:text-lg md:text-xl font-light p-2 w-full
+            shadow-xl capitalize focus:outline-none
+            placeholder:lowercase placeholder:text-[10px] sm:placeholder:text-sm
+            sm:w-3/4 md:w-1/2 lg:w-1/3"
         />
         <BiSearch
           size={30}
@@ -41,17 +44,17 @@ const Inputs = ({ setQuery, setUnits }) => {
           onClick={handleLocationClick}
         />
       </div>
-
-      <div className="flex flex-row w-1/4 items-center justify-center">
+      {/**Makes the container take the full width on smaller screens and only 1/4 width on larger screens.*/}
+      <div className="flex flex-row items-center justify-center w-full sm:w-1/4">
         <button
-          className="text-2xl font-medium transition ease-out hover:scale-125"
+          className="text-xl sm:text-2xl font-medium transition ease-out hover:scale-125"
           onClick={() => setUnits("metric")}
         >
           ℃
         </button>
-        <p className="text-2xl font-medium mx-1">|</p>
+        <p className="text-xl sm:text-2xl font-medium mx-2">|</p>
         <button
-          className="text-2xl font-medium transition ease-out hover:scale-125"
+          className="text-xl sm:text-2xl font-medium transition ease-out hover:scale-125"
           onClick={() => setUnits("imperial")}
         >
           ℉
