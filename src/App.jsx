@@ -7,6 +7,7 @@ import TopButtons from "./components/TopButtons";
 import getFormattedWeatherData from "./services/weatherService";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Loader from "./components/Loader";
 
 const App = () => {
   const [query, setQuery] = useState({ q: "bangalore" });
@@ -38,21 +39,19 @@ const App = () => {
   };
 
   return (
-    <div
-      className={`mx-auto max-w-screen-lg mt-4 py-5 px-4 sm:px-8 md:px-16 lg:px-32 bg-gradient-to-br
+    weather ? <div
+      className={`mx-auto max-w-screen-lg py-5 px-4 sm:px-8 md:px-16 lg:px-32 bg-gradient-to-br
       shadow-xl shadow-gray-400 ${formatBackground()}`}
     >
       <TopButtons setQuery={setQuery} />
       <Inputs setQuery={setQuery} setUnits={setUnits} />
 
-      {weather && (
-        <>
-          <TimeAndLocation weather={weather} />
-          <TempAndDetails weather={weather} units={units} />
-          <Forecast title="3 Hour Step Forecast" data={weather.hourly} />
-          <Forecast title="Daily Forecast" data={weather.daily} />
-        </>
-      )}
+      <>
+        <TimeAndLocation weather={weather} />
+        <TempAndDetails weather={weather} units={units} />
+        <Forecast title="3 Hour Step Forecast" data={weather.hourly} formatBackground={() => formatBackground()}/>
+        <Forecast title="Daily Forecast" data={weather.daily} formatBackground={() => formatBackground()}/>
+      </>
 
       <ToastContainer
         autoClose={2500}
@@ -61,7 +60,7 @@ const App = () => {
         position="top-right"
         className="absolute top-0 right-0 m-4 w-1/3 z-50"
       />
-    </div>
+    </div> : <Loader/>
   );
 };
 

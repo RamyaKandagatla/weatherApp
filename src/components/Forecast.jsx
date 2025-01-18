@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 
-const Forecast = ({ title, data }) => {
+const Forecast = ({ title, data, formatBackground }) => {
   return (
-    <div >
+    <div className={`bg-transparent rounded-lg bg-gradient-to-l ${formatBackground} p-2 m-2`}>
       <div className="flex items-center justify-start mt-6">
         <p className="font-medium uppercase text-sm sm:text-base md:text-sm">{title}</p>
       </div>
